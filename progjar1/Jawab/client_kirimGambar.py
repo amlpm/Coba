@@ -3,7 +3,7 @@ import socket
 
 ip = ['192.168.122.111', '192.168.122.171']
 
-for x in range(1,2):
+for x in range(2):
     # Create a TCP/IP socket
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -16,7 +16,7 @@ for x in range(1,2):
         # Send data
         print(f"Enter file name of the image with extension (example: filename.jpg,filename.png)")
         fname = input()
-        rname = 'kirimBalik' + '-' + fname
+        rname = 'kirimBalik' + '-' + 'alpine' + str(x) + '-' + fname
         f = open(fname, 'rb')
         img = f.read()
         sock.sendall(img)
