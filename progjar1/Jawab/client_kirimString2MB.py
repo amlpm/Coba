@@ -3,7 +3,7 @@ import socket
 import random
 import string
 
-ip = ['192.168.122.111', '192.168.122.171']
+ip = ['192.168.122.51', '192.168.122.21']
 
 for x in range(2):
     # Create a TCP/IP socket
@@ -20,7 +20,8 @@ for x in range(2):
         # 1Kb = 1000byte
         # 1character = 1byte
         # Conclusion : 2Mb = 2000000 Character
-        message = ''.join(random.choices(string.ascii_letters, k = 2000000))
+        # Replace 150 to 2000000 (2Mb)
+        message = ''.join(random.choices(string.ascii_letters, k = 150))
         print(f"sending {message}")
         sock.sendall(message.encode())
 
